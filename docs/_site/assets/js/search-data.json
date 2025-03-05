@@ -1,0 +1,205 @@
+{"0": {
+    "doc": "Conception et Modélisation",
+    "title": "Conception et Modélisation",
+    "content": "Le PAJET a été conçu avec des objectifs clairs en termes de légèreté, de robustesse et de modularité. L’objectif principal était de créer un robot à la fois accessible et performant, tout en garantissant une fabrication simple et un coût réduit. La modélisation complète du robot a été réalisée à l’aide du logiciel Onshape, qui permet de concevoir chaque composant en 3D avant l’impression et d’optimiser la disposition des pièces pour limiter les contraintes mécaniques. Nous avons aussi utilisé le logiciel Solidworks afin de réaliser des simulations de résistance de matériaux. L’architecture du robot repose sur six axes de rotation permettant une grande flexibilité des mouvements et une meilleure adaptation aux tâches de manipulation. La base du robot constitue le premier axe et assure la rotation principale du bras autour de l’axe vertical (rotation en Z). Le deuxième axe, situé à une distance de 15 centimètres de la base, permet une rotation autour de l’axe horizontal (rotation en X) et sert à incliner l’ensemble du bras. Le troisième axe, placé à 19.5 centimètres du précédent, agit également autour de l’axe X et joue un rôle clé dans l’extension du bras. Ensuite, à une distance de 11,8 centimètres, le quatrième axe introduit une rotation autour de Z, servant principalement à orienter le poignet du robot. Le cinquième axe, positionné 13 centimètres plus loin, assure une rotation autour de l’axe X et est dédié à l’inclinaison de l’outil terminal. Enfin, le sixième et dernier axe, situé à 7.39 centimètres du cinquième, permet une rotation autour de l’axe Z pour orienter avec précision l’outil utilisé. Avec une taille totale de 60 centimètres, le robot est donc capable d’atteindre des objets placés sur le convoyeur. Cette taille à était choisie en tenant compte des contrainte physiques du convoyeur ainsi que des capacités des servomoteur. Donc en placent le robot au centre du convoyeur, il ne peut pas saisir des objets à l’extrémité du convoyeur dû à certaine contrainte physique du robot . ",
+    "url": "/meca/1-conception.html",
+    
+    "relUrl": "/meca/1-conception.html"
+  },"1": {
+    "doc": "Les moteurs",
+    "title": "Les moteurs",
+    "content": "Nous avons commencé par estimer le couple nécessaire avant la conception totale : (préciser que c’est un choix de début, remettre à la fin de poids réel) . | Au départ de l’axe n°2 : 16,6kg/cm -&gt; 33,2kg/cm (avec coef de sécurité de 2) | Au départ de l’axe n°3 : 15,5,75kg/cm - &gt;31,5kg/cm (avec coef de sécurité de 2) | Au départ de l’axe n°5 : 3,3kgkg/cm - &gt;6,6kg/cm (avec coef de sécurité de 2) | . Vitesse linéaire maximal du bras : . 0,2sec/60° -&gt; 1,2sec/360° 1,2 * 2 * pi = 7,54 rad/s 7,54 * 60 = 452 cm/s -&gt; 4,52 m/s à vide bras déployé 7,54 * 20 = 150,8cm/s -&gt; 1,58 ms/s à vide bras mi-déployé . Il est également nécessaire de connaître la position du moteur pour déterminer si le bras fonctionne correctement. Grace à cela, nous avons pu sélectionner plusieurs moteurs compatibles : . | Type | Référence | Couple | Prix | . | Servomoteurs avec feedback | GoTronic | 17.5 kg/cm | 14.65 x 8 = 117.2€ | . | Moteurs pas à pas avec encodeurs | 17HS19-2004S1 | 5.9kg/cm | 19.50 x 8 = 156€ | . | Moteurs pas à pas avec encodeurs | 23HS30-2804S | 18.9kg/cm | 39.9 x 8 = 319€ | . | Moteurs pas à pas avec réducteurs | 42STH38-100 | 48kg/cm | 68.9 x 8 = 551.2€ | . | Servomoteurs digital feetech |   |   | 13.50 x 2 = 27€ | . L’utilisation d’un moteur pas à pas nous oblige à ajouter un encodeur à l’arrière de celui-ci pour connaître sa position. Cela aura pour conséquence d’en augmenter le coût. De plus, il faut également acheter un driver par moteur pour les contrôler, ce qui représente un coût supplémentaire (environ 15 € par moteur). Dans cette optique de réduction des coûts, il est donc préférable d’utiliser des servos moteurs, bien moins chers, plus simples à mettre en place, moins lourds et plus petits. ",
+    "url": "/choixComp/1-moteurs.html",
+    
+    "relUrl": "/choixComp/1-moteurs.html"
+  },"2": {
+    "doc": "Choix des Matériaux",
+    "title": "Choix des Matériaux",
+    "content": "Le choix définitif des matériaux a été réalisé à l’aide de simulations pour la résistance des matériaux dans le but d’obtenir des pièces avec des coefficients de sécurité supérieurs à 2. Pour obtenir ces coefficients, nous avons donc dû jouer avec le diamètre intérieur des différents bras. Le robot est donc principalement fabriqué en PLA qui est un matériau fréquemment utilisé dans le domaine de l’impression 3D. C’est un matériau facile à imprimer et qui, selon l’imprimante utilisée nous offre une bonne précision dimensionnelle. C’est aussi un matériau qui reste économique. Ce qui nous permet de réaliser différents prototypes à des coûts très réduits. Grâce à sa rigidité et à sa légèreté, il répond aux différentes contraintes mécaniques du robot. Malgré ces différents avantages, le PLA présente certaines limites, C’est un matériau qui est assez sensible à la chaleur et suite aux chocs il est possible que celui-ci se déforme, ce qui peut réduire sa durabilité à long terme. Pour les rotations autour de l’axe Z, le robot s’appuie sur des roulements imprimés en 3D, qui est une solution qui permet d’assurer une rotation fluide tout en maintenant une légèreté de la structure. Comme dit précédemment, les roulements sont imprimés en Iglidur qui est un filament autolubrifié spécialement conçu pour réduire la friction et l’usure mécanique. Cette option nous offre donc de bons compromis entre performance et légèreté sans impacter la masse du robot. Pour une utilisation plus durable, l’utilisation de roulement métallique aurait pu être intégrée, car ceux-ci offrent de meilleures performances mais leur poids serait bien plus important car le diamètre intérieur est de 20 mm minimum. ",
+    "url": "/meca/2-choixMat.html",
+    
+    "relUrl": "/meca/2-choixMat.html"
+  },"3": {
+    "doc": "Le(s) microcontrôleur(s)",
+    "title": "Le(s) microcontrôleur(s)",
+    "content": "Les besoins du Microcontrôleur : . | Ressource en calcul importants | A terme projet de vision pour le contrôle du robot. | Calcul de matrice pour le contrôle des mouvements | Conversion des matrices en signal pour les moteurs | Branche GPIO pour le contrôle des moteurs ou accessoires | Entrée analogique pour le feedback des moteurs | Connectique WI-FI pour le contrôle à distance depuis un ordinateur | Idéalement la possibilité de programmer avec plusieurs langages pour s’adapter au besoin au choix logiciel. | . L’ESP32 et les cartes Arduino ne seront pas adaptées par manque de ressources en calcul. Quant à la Raspberry Pi, elle ne possède pas d’entrée analogique, mais il est possible d’ajouter un composant sur les GPIO pour percevoir les retours des servos et convertir les signaux analogiques en numériques. Pour cela, il est possible d’utiliser un composant comme le ADS1115 qui communique via le protocole I2C. Pour limiter les coûts, nous pouvons également utiliser une carte Arduino (que nous n’avons pas besoin d’acheter) possédant des entrées analogiques et qui pourra communiquer avec la Raspberry via différents protocoles possibles. Enfin, pour faciliter le contrôle des servos et limiter les besoins en calculs, il est possible d’utiliser une carte comme la PCA9685 qui s’occupera de générer les signaux PWM envoyés au servo moteur. Celle-ci est adaptée à la Raspberry Pi et se fixe directement dessus environ 20 €. ",
+    "url": "/choixComp/2-microcontroleur.html",
+    
+    "relUrl": "/choixComp/2-microcontroleur.html"
+  },"4": {
+    "doc": "Étude des contraintes mécaniques",
+    "title": "Étude des contraintes mécaniques",
+    "content": " ",
+    "url": "/meca/3-EtudeContraintesMeca.html",
+    
+    "relUrl": "/meca/3-EtudeContraintesMeca.html"
+  },"5": {
+    "doc": "Alimentation",
+    "title": "Alimentation",
+    "content": "Les servomoteurs consomment au maximum 2,4 A par moteur (d’après nos tests réalisés). Pour être sûr de pouvoir les alimenter correctement, nous avons décidé de considérer 3 A par moteur : . 3 x 8 = 24 A . Les servos moteurs ont une plage d’alimentation entre 4,8 et 8,4 V. Plus la tension d’alimentation est élevée, plus leur couple est important. Avec une alimentation de 8 V : 8 * 24 = 192 W. Les tensions d’alimentation standard sont de 5 V ou de 12 V, sans intermédiaire. Sur les alimentations à découpage, une vis permet de régler la tension de sortie d’environ 15 %. Même en considérant la plage de réglage de 15 %, nous ne pourrons pas obtenir la tension d’alimentation idéale. | 12*0,85 = 10,2 V . | 5*1,15 = 5,75 V . | . Nous pouvons utiliser des hacheurs Buck pour réduire la tension de 12 V à 8 V. Leur coût est très faible par rapport aux bénéfices en termes de puissance. De plus, les alimentations en 12 V sont moins chères que celles en 5 V à puissance équivalente. Pour cette plage de tension et d’ampérage, le LM2596 est un module adapté. Son rendement est annoncé à 94 %. En considérant un rendement de 90 % : . | 192*1,10 = 211.2 W | . LRS150F-5 -&gt; 30€ alimentation 5V 20A . 12V 30A -&gt;26€ -&gt; Amazon . LM2596 -&gt; convertisseur BUCK -&gt; 0.99€/10 (aliexpress) ou 14€/10 (Amazon) . L’alimentation de la carte Raspberry Pi se fera à part, pour éviter les variations de tension dues au servomoteur (celui-ci y étant très sensible). Elle nous revient à 11.69€ l’unité et donc 23.38€ pour nous car nous en prenons deux. ",
+    "url": "/choixComp/3-alimentation.html",
+    
+    "relUrl": "/choixComp/3-alimentation.html"
+  },"6": {
+    "doc": "Étude des contraintes mécaniques",
+    "title": "Étude des contraintes mécaniques",
+    "content": "Afin de facilité la maintenance et d’augmenté la durabilité des pièces du robot, des inserts filetés ont été installé à chauds ce qui augmente drastiquement la duré de vie des pas de vis et renforce ainsi les pièces. De plus afin de limiter les efforts lorsque le robot se relève, des ressorts ont été installé ce qui permet donc de soulager les moteurs lors de cet effort. Toujours dans l’optique de diminuer les efforts appliqués sur les servomoteurs, des paliers sont donc installé. Les paliers tout comme les roulements, sont imprimé en 3D en Iglidur afin de fluidifier les mouvements des différents axes. Les efforts générés par les moteurs sont transmis aux articulations via des palonniers en aluminium ce qui garantis une bonne répartition des effort et minimise les risque de jeu mécanique . ",
+    "url": "/meca/4-FixTransEfforts.html",
+    
+    "relUrl": "/meca/4-FixTransEfforts.html"
+  },"7": {
+    "doc": "Options",
+    "title": "Options",
+    "content": "Bouton d’arrêt d’urgence : . Possibilité de l’imprimer en 3D et d’utiliser un simple interrupteur ON/OFF. 11€98 . Ventilateur : . Nous avons mis un ventlateur en option car …. il serait au prix de 14.26€ . Actionneur : l’actionneur se trouve au prix de 13€50, soit 27€ car nous en avons besoin de deux. Bornier de connexion est à 10.99€ ainsi que la caméra à 29.99€ . ",
+    "url": "/choixComp/4-options.html",
+    
+    "relUrl": "/choixComp/4-options.html"
+  },"8": {
+    "doc": "Actionneurs et outils interchangeables",
+    "title": "Actionneurs et outils interchangeables",
+    "content": "Le robot a été conçu pour être compatible avec plusieurs outils interchangeables, qui peuvent être adaptés à différentes applications. Nous avons donc conçu deux types d’outils, le premier étant une pince motorisée qui est idéale pour le déplacement de pièce rigide. Le second outil est quant à lui une ventouse qui est donc plus adaptée à la manipulation d’objets délicats ou souples. Chaque outil est fixé au bout du sixième axe du robot a l’aide d’une fixation simple Pour la réalisation des outils, ceux-ci ont été modélisés avec l’utilisation des servomoteurs FT1025M qui sont de petits servomoteurs, ce qui rend les outils légers et précis. Pour la pince le moteur est donc monté à l’arrière de celle-ci dans le but de centrer les pinces afin d’éviter d’appliquer une correction à la trajectoire du robot. Pour la ventouse, une boîte a été réalisée afin de comprimer l’air ou de créer une dépression. Cette boîte est donc située proche du boîtier d’alimentation, il permet de limiter le poids aux bouts du robot, ce qui permet donc de soulever des charges plus élevées Afin de contrôler nos outils, ils sont contrôlés via l’Arduino, qui génère les signaux PWM nécessaires à leur contrôle . ",
+    "url": "/meca/5-actionneurs.html",
+    
+    "relUrl": "/meca/5-actionneurs.html"
+  },"9": {
+    "doc": "Récapitulatif et matériaux",
+    "title": "Taille du Bras :",
+    "content": "La taille du robot dépend principalement de l’utilisation qui en sera faites. Dans notre cas le robot doit uniquement attraper une pièce en mouvement sur un convoyeurs de 1,20m. Nous n’avons pas de contrainte particulière sur l’endroit auquel la pièce doit être attrapé ni de la position de l’outil (pitch, roll, yaw) au moment où la pièces et prise. Etant donné que le robot peut atteindre une multitude de position dans son champ d’action, si l’on place le robot au centre du convoyeur, il pourra atteindre la pièce sur une zones environ égale à deux fois sa taille totale. Dans notre cas uniquement un champ d’action d’une dizaine de centimètre serait suffisant pour prendre la pièce. Or étant donné que le projet est voué à être repris et amélioré. Nous avons décidé d’avoir une taille bien supérieure, lui permettant d’éventuelles autres utilisations ou contrainte d’utilisation. Sur cette base nous avons choisi un objectif de taille de 60 cm car cela permettait d’atteindre la majeure partie du convoyeur sans engendrer des forces nécessitant des moteurs extrêmement puissants. ",
+    "url": "/choixComp/5-recap.html#taille-du-bras-",
+    
+    "relUrl": "/choixComp/5-recap.html#taille-du-bras-"
+  },"10": {
+    "doc": "Récapitulatif et matériaux",
+    "title": "Choix des matériaux :",
+    "content": "Pour le choix des matériaux utilisés lors de l’impression 3D, plusieurs options s’offrent à nous, Pour les différentes pièces principales du robot, nous avons eu le choix entre le PLA et le PETG. Le PETG est plus résistant mais il est aussi et surtout plus cassant. Nous avons donc choisi le PLA car celui-ci est recyclable et économique, mais aussi car celui-ci a un comportement plus « élastique » ce qui lui permet de se déformer et non de casser lors des chocs. Le PLA nous permet donc de créer des pièces de grandes tailles avec des caractéristiques mécaniques adaptés à notre usage mais aussi d’obtenir des pièces suffisamment résistantes et très légères. ",
+    "url": "/choixComp/5-recap.html#choix-des-mat%C3%A9riaux",
+    
+    "relUrl": "/choixComp/5-recap.html#choix-des-matériaux"
+  },"11": {
+    "doc": "Récapitulatif et matériaux",
+    "title": "Roulement :",
+    "content": "Les roulements actuellement utilisés sur le robot sont entièrement imprimés en 3D et sont par conséquent soumis à une usure rapide. Pour pallier ce problème, les roulements vont être imprimés en iglidur. (Filament autolubrifié de chez igus). Malgré ce matériau l’usure sera tout de même plus prononcée qu’avec des roulements en métal qui sont beaucoup plus lourd. Étant donné que le robot est un prototype, les roulements fait en impression 3D seront gardés dans un premier temps pour conserver la légèreté nécessaire au robot pour pouvoir fonctionner avec les moteurs choisis. Néanmoins il est possible d’utiliser des roulements en métal mais il faudra pour cela changer les moteurs de l’axe N°2. Ceux-ci peuvent être remplacer par des moteurs brushless identique aux nôtres mais beaucoup plus puissant et moins sensible à l’usure (également beaucoup plus chère). À titre d’indication les roulements en métal pèsent environ 65g à eux seul tandis que notre système pèse 20 g pour l’ensemble roulement/fixations. ",
+    "url": "/choixComp/5-recap.html#roulement",
+    
+    "relUrl": "/choixComp/5-recap.html#roulement"
+  },"12": {
+    "doc": "Récapitulatif et matériaux",
+    "title": "Récapitulatif et matériaux",
+    "content": "| Composant | Prix | . | Convertisseur BUCK x 10 | 14€ | . | Raspberry Pi | 20€ | . | Ventilateur | 14.26€ | . | Bouton AU | 11.98€ | . | Alimentation 5V 20A | 26€ | . | Moteur x 8 | 117.2€ | . | Actionneur | 27€ | . | Palonnier moteur x 10 | 24€ | . | Moteur actionneur x 2 | 27€ | . | Caméra | 29.99€ | . | Total |   | . ",
+    "url": "/choixComp/5-recap.html",
+    
+    "relUrl": "/choixComp/5-recap.html"
+  },"13": {
+    "doc": "About",
+    "title": "About",
+    "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com . You can find the source code for Minima at GitHub: jekyll / minima . You can find the source code for Jekyll at GitHub: jekyll / jekyll . ",
+    "url": "/about/",
+    
+    "relUrl": "/about/"
+  },"14": {
+    "doc": "Apports et Améliorations",
+    "title": "Apports et Améliorations",
+    "content": "Dans le cadre de ce projet de modélisation et de création d’un robot, nous avons collaboré en tant qu’équipe pour mener à bien les différentes étapes. Chacun a apporté ses compétences spécifiques, et ensemble, nous avons conçu et modélisé en 3D les composants du robot à l’aide d’Onshape, en tenant compte des contraintes mécaniques et fonctionnelles. Nous avons également travaillé sur la programmation et les tests des fonctionnalités, en veillant à optimiser les séquences de mouvements pour garantir une fluidité et une précision adaptées aux objectifs du projet. En parallèle, nous avons rédigé une documentation technique détaillée, qui décrit les étapes de conception, les choix d’intégration des systèmes, et les résultats des tests finaux. Cette documentation assure une traçabilité complète et constitue une base pour d’éventuelles évolutions futures. Enfin, la gestion de projet a été un véritable effort collectif : nous avons planifié les tâches, réparti les responsabilités et assuré une coordination efficace pour respecter les délais et garantir une progression harmonieuse. Malgré la réussite de notre projet, certains points pourraient être améliorés pour de futures réalisations. Tout d’abord, une planification initiale plus précise nous aurait permis de limiter les retards rencontrés, en particulier lors des phases de prototypage où des modifications fréquentes ont ralenti notre avancement. La documentation technique, bien que complète, pourrait être enrichie par une version simplifiée à destination des utilisateurs finaux, afin de faciliter la prise en main du robot. + dire les trucs de sécurité . De plus, la collaboration au sein de l’équipe, bien qu’efficace, pourrait être renforcée par une meilleure mise en commun des idées dès le départ. Des sessions de brainstorming plus fréquentes auraient probablement permis d’explorer davantage de solutions innovantes. Enfin, nos tests se sont principalement déroulés en laboratoire, dans un environnement contrôlé. Une mise en situation dans des conditions réelles d’utilisation aurait été bénéfique pour évaluer la robustesse et l’adaptabilité du robot dans des contextes variés. Ces réflexions nous serviront de guide pour améliorer nos méthodes dans les projets à venir. ",
+    "url": "/apportsEtAmelioration.html",
+    
+    "relUrl": "/apportsEtAmelioration.html"
+  },"15": {
+    "doc": "Aspect Technique",
+    "title": "Aspect Technique",
+    "content": " ",
+    "url": "/technique/aspectTech.html",
+    
+    "relUrl": "/technique/aspectTech.html"
+  },"16": {
+    "doc": "Cahier des Charges",
+    "title": "1 - Contexte du projet :",
+    "content": "Au cours de notre quatrième année au sein d’UniLaSalle Amiens, nous avons eu l’opportunité de participer aux cours de projet. Ces cours ont pour but de nous apprendre de nouvelles compétences via un projet en groupe de 72 heures. La liberté de création de projet nous a permis de réaliser un robot capable de prendre des pièces en mouvement sur un convoyeur. Actuellement, au sein de l’école nous avons la chance d’avoir l’usine école, regroupant différents robots avec des compétences larges. Cependant, il n’y a pas de robot suivi de trajectoire. C’est pour cela, que ce projet nous tient à cœur : il pourrait permettre aux étudiants de pratiquer dans l’usine école du suivi de trajectoire. ",
+    "url": "/cahierCharges.html#1---contexte-du-projet-",
+    
+    "relUrl": "/cahierCharges.html#1---contexte-du-projet-"
+  },"17": {
+    "doc": "Cahier des Charges",
+    "title": "2 - Objectifs principaux du projet :",
+    "content": "L’objectif premier est de créer un robot étant capable de faire du suivi de trajectoire au sein de l’usine école, afin de l’intégrer dans les TP des étudiants. Cet objectif s’articule autour d’autres points tels que : . | Création d’un bras robotisé à 6 axes fonctionnel : Le robot devra être capable de réaliser des mouvements précis dans l’espace. | Contrôle logiciel : Le robot devra être connecté à une interface logicielle qui offrira aux utilisateurs la possibilité de le programmer, de configurer des séquences de mouvements, et d’ajuster des paramètres pour des expériences variées. | Mobilité : Le bras robotisé doit être transportable, compact et léger afin de pouvoir être utilisé dans différents environnements d’apprentissage. (Démontable) | . Les buts de ce robot sont aussi séquencés. En effet, nous avons commencé par de petits buts tels que le faire bouger, puis, nous avons compliqué avec des buts précis : pouvoir le contrôler via un logiciel ou une tablette, rendant ainsi, l’utilisation plus optimale. Sur ce schéma, le résumé de nos buts durant ce projet : . ",
+    "url": "/cahierCharges.html#2---objectifs-principaux-du-projet-",
+    
+    "relUrl": "/cahierCharges.html#2---objectifs-principaux-du-projet-"
+  },"18": {
+    "doc": "Cahier des Charges",
+    "title": "3 - Différents domaines de travail du robot PAJET :",
+    "content": ". | Aspect mécanique du robot : physique et 3D | Aspect mécanique du robot : calcul | Contrôle des moteurs : FB5116M et FT1025M | Développement du contrôle : gérer les déplacements, combiner les mouvements avec la vision | Caméra : gestion de la vision | . ",
+    "url": "/cahierCharges.html#3---diff%C3%A9rents-domaines-de-travail-du-robot-pajet-",
+    
+    "relUrl": "/cahierCharges.html#3---différents-domaines-de-travail-du-robot-pajet-"
+  },"19": {
+    "doc": "Cahier des Charges",
+    "title": "4 - Exigences techniques :",
+    "content": "Pour assurer le respect des objectifs pédagogiques et fonctionnels, le robot devra : . | Posséder une structure mécanique robuste et légère : La structure doit être conçue avec des matériaux à la fois solides et légers pour assurer la durabilité tout en restant transportable. | Intégrer un système de vision : Le robot pourrait être équipé d’une caméra et de capteurs pour reconnaître et manipuler des objets dans son environnement. | . ",
+    "url": "/cahierCharges.html#4---exigences-techniques-",
+    
+    "relUrl": "/cahierCharges.html#4---exigences-techniques-"
+  },"20": {
+    "doc": "Cahier des Charges",
+    "title": "5 - Contraintes et recommandations :",
+    "content": ". | Respect des normes de sécurité : La conception du robot doit inclure des éléments de sécurité pour protéger les utilisateurs. | Documentation complète : Le projet devra inclure une documentation technique. | . ",
+    "url": "/cahierCharges.html#5---contraintes-et-recommandations-",
+    
+    "relUrl": "/cahierCharges.html#5---contraintes-et-recommandations-"
+  },"21": {
+    "doc": "Cahier des Charges",
+    "title": "Cahier des Charges",
+    "content": "Le cahier des charges a été le temps pour nous de réfléchir à nos besoins pour ce robot, quels seraient ses buts, notre organisation durant ce projet. Puis, nos objectifs principaux autant personnels que professionnels, nous ont amené à construire un cahier des charges réalisables sur notre temps imparti. Tout au long de ce projet, l’application Trello fut notre guide pour respecter le temps imparti, nos objectifs de projet et nos attentes. ",
+    "url": "/cahierCharges.html",
+    
+    "relUrl": "/cahierCharges.html"
+  },"22": {
+    "doc": "Choix des composants",
+    "title": "Choix des composants",
+    "content": "Le choix des composants est une étape essentielle dans la conception de notre robot 6 axes, car il influence directement sa précision, sa robustesse et ses performances globales. Chaque composant a été sélectionné afin d’assurer une intégration optimale et un fonctionnement fiable pour les différents objectifs que nous lui avons fixé : suivi de trajectoire, port de charges… Les moteurs, par exemple, doivent offrir un couple suffisant pour garantir des mouvements fluides et précis sur chaque axe, tandis que les palonniers jouent un rôle clé dans la transmission des efforts et la stabilité des articulations. D’autres composants, tels que les capteurs et le système de commande, ont également été choisis en tenant compte de critères comme la compatibilité mécanique et électronique, la facilité de maintenance et le coût. Cette démarche nous permet d’optimiser l’efficacité du robot tout en garantissant sa fiabilité technique et économique. ",
+    "url": "/choixComp/choixComp.html",
+    
+    "relUrl": "/choixComp/choixComp.html"
+  },"23": {
+    "doc": "Conclusion",
+    "title": "Conclusion",
+    "content": "Le projet PAJET nous a permis de mettre en pratique de manière concrète les compétences acquises tout au long de notre formation en Production Automatisée et Usine Connectée. De la modélisation à la conception finale du robot, chaque étape nous a confrontés à des défis techniques variés, notamment dans l’utilisation de logiciels tels qu’Onshape et 3D Experience, ainsi que dans la fabrication et l’assemblage de PAJET. Ce projet a favorisé le travail collaboratif et la montée en compétences dans plusieurs domaines clés : mécanique et programmation robotique. Notre apport personnel a notamment porté sur la rédaction du rapport, le travail en équipe ainsi que la cohésion de groupe contribuant à améliorer l’efficacité globale du projet. Enfin, ce travail nous a également permis d’identifier des axes d’amélioration pour les futurs projets similaires. En conclusion, ce projet a été une expérience enrichissante qui nous prépare à relever de nouveaux défis dans le domaine de l’automatisation et de la robotique industrielle. ",
+    "url": "/conclusion.html",
+    
+    "relUrl": "/conclusion.html"
+  },"24": {
+    "doc": "Accueil",
+    "title": "Accueil",
+    "content": " ",
+    "url": "/",
+    
+    "relUrl": "/"
+  },"25": {
+    "doc": "Introduction",
+    "title": "Introduction",
+    "content": "Dans un contexte où la robotique s’impose comme un pilier de l’industrie, les entreprises cherchent à intégrer des solutions automatisées toujours plus performantes et adaptées à leurs besoins des usines 4.0. Parmi ces solutions, le suivi de trajectoire se distingue comme une fonctionnalité essentielle : dans des secteurs nécessitant précision et répétabilité, tels que l’assemblage, la logistique ou la fabrication. En tant qu’étudiants en quatrième année d’ingénieur au sein de la filière Production Automatisée et Usine Connectée (PAUC) à UniLaSalle Amiens, nous avons choisi de relever un défi ambitieux dans le cadre d’un projet de 72 heures : concevoir et réaliser un robot à 6 axes, capable d’assurer un suivi de trajectoire fonctionnel et précis. Ce choix s’inscrit dans une volonté d’explorer les enjeux actuels de la robotique industrielle tout en intégrant des contraintes économiques, une réalité omniprésente pour les entreprises. Notre projet ne se limite pas à la simple construction d’un prototype. Il prévoit également de répondre à une problématique intéressante : est-il possible de concevoir un robot à 6 axes capable de suivre une trajectoire linéaire de manière fonctionnelle, tout en optimisant les coûts de réalisation ? Cette question, reflétant des préoccupations dans le domaine de la production, a guidé chacune des étapes de notre travail. Ce rapport se propose de présenter de manière structurée et détaillée l’ensemble de notre démarche. Nous y décrivons les aspects techniques du projet, depuis la conception mécanique jusqu’à la programmation et l’évaluation des performances de PAJET, le nom que nous avons donné à notre robot. Enfin, nous mettons en lumière l’apport personnel de cette expérience, avec les compétences acquises, les difficultés surmontées, ainsi que les axes d’amélioration identifiés. Nous finirons ce rapport par une conclusion enrichie d’annexes. ",
+    "url": "/intro.html",
+    
+    "relUrl": "/intro.html"
+  },"26": {
+    "doc": "Mécanique",
+    "title": "Mécanique",
+    "content": " ",
+    "url": "/meca/meca.html",
+    
+    "relUrl": "/meca/meca.html"
+  },"27": {
+    "doc": "Organisation",
+    "title": "Organisation",
+    "content": "L’organisation des tâches de ce projet s’est appuyée sur les compétences déjà acquises des membres du groupe. À la suite de cela, nous avons aussi discuté de nouveaux apprentissages pour sortir chacun de notre zone de confort. La création de ce robot s’est établie sur les différents domaines explicités précédemment. Pour l’aspect mécanique, tel que la modélisation du robot ou encore les schémas cinétiques, Théo et Pierre-Alex s’en sont occupés, commençant par une inspiration du robot NIRIO. L’aspect mécanique rassemble aussi tous les calculs nécessaires pour que le robot soit en accord avec les composants, son poids et son physique. Cet aspect a demandé l’intervention de Jules, se rajoutant au groupe de mécanique, pour décortiquer plus facilement ces matrices. Jules contrôle les moteurs, calculs contrôle de deg / calcul de puissances de tout . Emma, quant à elle pourra découvrir le monde de la modélisation grâce à la création des pièces que le robot devra porter (pièces de différentes formes). Elle rédigera aussi le rapport et créera le diaporama. Lien vers le Trello . ",
+    "url": "/organisation.html",
+    
+    "relUrl": "/organisation.html"
+  },"28": {
+    "doc": "Programmation",
+    "title": "Programmation",
+    "content": " ",
+    "url": "/programmation/programmation.html",
+    
+    "relUrl": "/programmation/programmation.html"
+  }
+}
