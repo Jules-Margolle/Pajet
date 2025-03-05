@@ -28,10 +28,14 @@ jobs:
           bundler-cache: true
 
       - name: Install dependencies
-        run: bundle install
+        run: |
+            cd docs  # Change this if your site is in another folder
+            bundle install
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build --trace
+        run: |
+        cd docs
+        bundle exec jekyll build --trace
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
